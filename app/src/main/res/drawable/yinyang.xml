@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- partie blanche-->
     <item android:bottom="90dp"
         android:id="@+id/white_circle_container">
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,18 +20,16 @@
     </item>
     <item android:width="90dp"
         android:height="45dp" android:top="45dp" android:id="@+id/white_halfcircle_container">
-
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
-
             <solid android:color="@color/black"/>
             <corners
                 android:topLeftRadius="100dp"
                 android:topRightRadius="100dp"></corners>
-
         </shape>
     </item>
 
+    <!-- partie blanche-->
     <item android:top="90dp" android:id="@+id/black_circle_container">
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
@@ -42,9 +42,7 @@
                 android:bottomRightRadius="200dp"
                 android:topLeftRadius="0dp"
                 android:topRightRadius="0dp"></corners>
-
         </shape>
-
     </item>
 
     <item android:top="90dp" android:width="90dp"
@@ -58,9 +56,7 @@
                 android:bottomRightRadius="100dp"
                 android:topLeftRadius="0dp"
                 android:topRightRadius="0dp"></corners>
-
         </shape>
-
     </item>
 
 </layer-list>
