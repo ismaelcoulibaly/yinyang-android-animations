@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/yinyang_container"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="350dp"
         android:layout_gravity="center"
         android:gravity="center">
 
@@ -28,8 +28,9 @@
     <LinearLayout
         android:layout_below="@+id/buttons_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:layout_weight="">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -61,7 +62,26 @@
                 android:fontFamily="@font/sf_pro_semibold_family_font"/>
         </LinearLayout>
 
+
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/notifications_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:src="@drawable/notification_icon"
+            android:background="@null" />
+
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>
