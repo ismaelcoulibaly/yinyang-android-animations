@@ -19,6 +19,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import static android.app.PendingIntent.getActivity;
+import static android.app.PendingIntent.getBroadcast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button animateBtn, stopBtn;
@@ -61,17 +62,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.notifications_btn:
 
-                Intent intent = new Intent(this, MainActivity2.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                PendingIntent pendingIntent = getActivity(this, 0 ,intent, 0);//creation pending intent
+//                Intent intent = new Intent(this, MainActivity2.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                PendingIntent pendingIntent = getActivity(this, 0 ,intent, 0);//creation pending intent
+
+                Intent broadcastIntent = new Intent(this, NotificationReceiver.class);
+                broadcastIntent.putExtra("message", "bouton notification active");
+                PendingIntent pendingIntent = getBroadcast(this, 0 , broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                         .setSmallIcon(R.drawable.notification_icon)
                         .setContentTitle("ombre et lumière")
                         .setContentText("yinyang")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setContentIntent(pendingIntent)//on set le content intent
-                        .setAutoCancel(true);//autocancel
+//                        .setContentIntent(pendingIntent)//on set le content intent
+//                        .setAutoCancel(true);//autocancel
+                        .addAction(R.drawable.ic_attachment, "activer", pendingIntent);//ajout action avec bouton( pendingIntent et broadCastIntent)
 
                 NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
                 notificationManager.notify(1, builder.build());
